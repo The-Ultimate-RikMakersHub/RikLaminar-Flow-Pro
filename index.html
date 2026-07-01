@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaminarFlow-PRO | RikMakersHub Material Engine</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>LaminarFlow-PRO</h1>
+        <p>Computer Vision Object Deconstruction Engine · RikMakersHub Sovereign Branch</p>
+    </header>
+
+    <div class="container">
+
+        <!-- MODULE 1: THE COMPUTER VISION SIMULATION TARGET INTERCEPT -->
+        <section class="section-card">
+            <h2>1. Real-Time Computer Vision Alloy Intercept</h2>
+            <p class="section-desc">Point the device camera array at physical materials to auto-classify compounds, extract elementary matrix fractions, and map elemental components.</p>
+            
+            <div class="cv-viewport-housing">
+                <div class="viewport-overlay-box">
+                    <span class="laser-scanner-line"></span>
+                    <div id="cv-bounding-box" class="target-bounding-box"></div>
+                    <span class="viewport-status-badge">CV LIVE READY</span>
+                </div>
+            </div>
+
+            <div class="cv-control-row">
+                <button class="cv-trigger-btn" onclick="simulateCVScan('steel_glass')">Scan Stainless Steel Glass</button>
+                <button class="cv-trigger-btn" onclick="simulateCVScan('brass_valve')">Scan Brass Hardware</button>
+                <button class="cv-trigger-btn" onclick="simulateCVScan('bronze_coin')">Scan Ancient Bronze Coin</button>
+            </div>
+
+            <!-- DYNAMIC TELEMETRY ELEMENT CLASSIFICATION READOUT -->
+            <div id="cv-telemetry-readout" class="telemetry-display" style="display: none;">
+                <h3 id="tel-object-name">Detected Matrix: —</h3>
+                <div class="telemetry-grid">
+                    <div class="telemetry-item">
+                        <label>Material Classification</label>
+                        <span id="tel-class-type">—</span>
+                    </div>
+                    <div class="telemetry-item">
+                        <label>Elementary Formula Breakdown</label>
+                        <span id="tel-formula-map" style="color: var(--accent);">—</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 2: INTERACTIVE IN-WEB PERIODIC TABLE NODE LAYOUT -->
+        <section class="section-card">
+            <h2>2. Core Elemental Periodic Matrix</h2>
+            <p class="section-desc">Click any elemental cell node to instantly execute an upstream database query or anchor directly into peer-reviewed research structures.</p>
+            
+            <div class="periodic-grid-housing">
+                <!-- Row 1 -->
+                <div class="element-node reactive-nonmetal" data-atomic="1" onclick="focusElementNode(1)">H<span>1</span></div>
+                <div class="empty-cell" style="grid-column: span 16;"></div>
+                <div class="element-node noble-gas" data-atomic="2" onclick="focusElementNode(2)">He<span>2</span></div>
+                
+                <!-- Row 2 -->
+                <div class="element-node alkali-metal" data-atomic="3" onclick="focusElementNode(3)">Li<span>3</span></div>
+                <div class="element-node alkaline-earth" data-atomic="4" onclick="focusElementNode(4)">Be<span>4</span></div>
+                <div class="empty-cell" style="grid-column: span 10;"></div>
+                <div class="element-node metalloid" data-atomic="5" onclick="focusElementNode(5)">B<span>5</span></div>
+                <div class="element-node reactive-nonmetal" data-atomic="6" onclick="focusElementNode(6)">C<span>6</span></div>
+                <div class="element-node reactive-nonmetal" data-atomic="7" onclick="focusElementNode(7)">N<span>7</span></div>
+                <div class="element-node reactive-nonmetal" data-atomic="8" onclick="focusElementNode(8)">O<span>8</span></div>
+                <div class="element-node halogen" data-atomic="9" onclick="focusElementNode(9)">F<span>9</span></div>
+                <div class="element-node noble-gas" data-atomic="10" onclick="focusElementNode(10)">Ne<span>10</span></div>
+
+                <!-- Row 3 -->
+                <div class="element-node alkali-metal" data-atomic="11" onclick="focusElementNode(11)">Na<span>11</span></div>
+                <div class="element-node alkaline-earth" data-atomic="12" onclick="focusElementNode(12)">Mg<span>12</span></div>
+                <div class="empty-cell" style="grid-column: span 10;"></div>
+                <div class="element-node post-transition" data-atomic="13" onclick="focusElementNode(13)">Al<span>13</span></div>
+                <div class="element-node metalloid" data-atomic="14" onclick="focusElementNode(14)">Si<span>14</span></div>
+                <div class="element-node reactive-nonmetal" data-atomic="15" onclick="focusElementNode(15)">P<span>15</span></div>
+                <div class="element-node reactive-nonmetal" data-atomic="16" onclick="focusElementNode(16)">S<span>16</span></div>
+                <div class="element-node halogen" data-atomic="17" onclick="focusElementNode(17)">Cl<span>17</span></div>
+                <div class="element-node noble-gas" data-atomic="18" onclick="focusElementNode(18)">Ar<span>18</span></div>
+
+                <!-- Row 4 (Partial for Critical Metallic Elements) -->
+                <div class="element-node alkali-metal" data-atomic="19" onclick="focusElementNode(19)">K<span>19</span></div>
+                <div class="element-node alkaline-earth" data-atomic="20" onclick="focusElementNode(20)">Ca<span>20</span></div>
+                <div class="element-node transition-metal" data-atomic="22" onclick="focusElementNode(22)">Ti<span>22</span></div>
+                <div class="element-node transition-metal" data-atomic="24" onclick="focusElementNode(24)">Cr<span>24</span></div>
+                <div class="element-node transition-metal" data-atomic="26" onclick="focusElementNode(26)">Fe<span>26</span></div>
+                <div class="element-node transition-metal" data-atomic="28" onclick="focusElementNode(28)">Ni<span>28</span></div>
+                <div class="element-node transition-metal" data-atomic="29" onclick="focusElementNode(29)">Cu<span>29</span></div>
+                <div class="element-node transition-metal" data-atomic="30" onclick="focusElementNode(30)">Zn<span>30</span></div>
+                <div class="empty-cell" style="grid-column: span 10;"></div>
+            </div>
+
+            <!-- INTENSITY COMPONENT INSPECTOR READOUT -->
+            <div id="inspector-readout-panel" class="telemetry-display" style="margin-top: 25px; border-left-color: var(--accent); display: none;">
+                <h3 id="ins-element-name">Element Selected: None</h3>
+                <div class="telemetry-grid">
+                    <div class="telemetry-item"><label>Atomic Number</label><span id="ins-atomic-no">—</span></div>
+                    <div class="telemetry-item"><label>Standard Atomic Weight</label><span id="ins-atomic-mass">—</span></div>
+                    <div class="telemetry-item"><label>Electron Configuration</label><span id="ins-config">—</span></div>
+                </div>
+                <div style="margin-top: 15px; text-align: right;">
+                    <a id="ins-passport-link" href="#" target="_blank" class="passport-anchor-btn">Query Royal Society of Chemistry Profile →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 3: THE RUNTIME AI CONSULTATION DASHBOARD -->
+        <section class="section-card">
+            <h2>3. Localized Autonomous AI Chemistry Core</h2>
+            <p class="section-desc">Query material combinations, compound classifications, or engineering application vectors natively with 0ms server latency and 0 INR token fees.</p>
+            
+            <div class="ai-chat-interface">
+                <div id="ai-chat-response-window" class="ai-response-stream">
+                    <p style="color: var(--warm-grey); margin: 0;">&gt; RikMakersHub Sovereign NLP Core Initialized. Enter materials query block to execute deconstruction...</p>
+                </div>
+                <div class="ai-input-row" style="margin-top: 15px; display: flex; gap: 10px;">
+                    <input type="text" id="ai-terminal-input" placeholder="Query alloys or elements (e.g., 'Deconstruct Stainless Steel' or 'Show Carbon properties')..." onkeypress="handleAITerminalKeyPress(event)">
+                    <button class="cv-trigger-btn" style="margin: 0; padding: 0 25px;" onclick="executeLocalAIEngineQuery()">Execute</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        © 2026 RikMakersHub Industrial Systems. Designed, Coded, and Documented by Rik. All Intellectual Property Secured.
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
