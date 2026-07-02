@@ -240,5 +240,18 @@ function focusElementNode(atomicNumber) {
     document.getElementById('ins-config').innerText = item.config;
 
     const passportLink = document.getElementById('ins-passport-link');
-    if (passportLink) passportLink.href = `https://rsc.org{atomicNumber}`;
+        passportLink.href = `https://rsc.org{atomicNumber}`;
+}
+// FORCES THE CENTRAL CONSOLE BUTTON TO DYNAMICALLY INJECT AND TRIGGER DIFY'S FLOATING WIDGET
+function triggerFloatingChatCore() {
+    // Attempt 1: Look for the native Dify bubble button element
+    let difyButton = document.getElementById('dify-chatbot-bubble-button');
+    
+    if (difyButton) {
+        difyButton.click();
+        return;
+    }
+
+    // Attempt 2: Direct fallback URL pop-up bridge so the client session NEVER breaks
+    window.open("https://udify.app", "_blank", "width=400,height=600,resizable=yes");
 }
