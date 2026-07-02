@@ -16,7 +16,7 @@
 
     <div class="container">
 
-        <!-- MODULE 1: THE COMPUTER VISION SIMULATION TARGET INTERCEPT -->
+        <!-- ─── MODULE 1: THE COMPUTER VISION SIMULATION TARGET INTERCEPT ─── -->
         <section class="section-card">
             <h2>1. Real-Time Computer Vision Alloy Intercept</h2>
             <p class="section-desc">Point the device camera array at physical materials to auto-classify compounds, extract elementary matrix fractions, and map elemental components.</p>
@@ -35,7 +35,6 @@
                 <button class="cv-trigger-btn" onclick="simulateCVScan('bronze_coin')">Scan Ancient Bronze Coin</button>
             </div>
 
-            <!-- DYNAMIC TELEMETRY ELEMENT CLASSIFICATION READOUT -->
             <div id="cv-telemetry-readout" class="telemetry-display" style="display: none;">
                 <h3 id="tel-object-name">Detected Matrix: —</h3>
                 <div class="telemetry-grid">
@@ -51,7 +50,7 @@
             </div>
         </section>
 
-        <!-- MODULE 2: INTERACTIVE IN-WEB PERIODIC TABLE NODE LAYOUT -->
+        <!-- ─── MODULE 2: INTERACTIVE IN-WEB PERIODIC TABLE NODE LAYOUT ─── -->
         <section class="section-card">
             <h2>2. Core Elemental Periodic Matrix</h2>
             <p class="section-desc">Click any elemental cell node to instantly execute an upstream database query or anchor directly into peer-reviewed research structures.</p>
@@ -84,16 +83,93 @@
                 <div class="element-node halogen" data-atomic="17" onclick="focusElementNode(17)">Cl<span>17</span></div>
                 <div class="element-node noble-gas" data-atomic="18" onclick="focusElementNode(18)">Ar<span>18</span></div>
 
-                <!-- Row 4 (Partial for Critical Metallic Elements) -->
-                <div class="element-node alkali-metal" data-atomic="19" onclick="focusElementNode(19)">K<span>19</span></div>
-                <div class="element-node alkaline-earth" data-atomic="20" onclick="focusElementNode(20)">Ca<span>20</span></div>
-                <div class="element-node transition-metal" data-atomic="22" onclick="focusElementNode(22)">Ti<span>22</span></div>
-                <div class="element-node transition-metal" data-atomic="24" onclick="focusElementNode(24)">Cr<span>24</span></div>
-                <div class="element-node transition-metal" data-atomic="26" onclick="focusElementNode(26)">Fe<span>26</span></div>
-                <div class="element-node transition-metal" data-atomic="28" onclick="focusElementNode(28)">Ni<span>28</span></div>
-                <div class="element-node transition-metal" data-atomic="29" onclick="focusElementNode(29)">Cu<span>29</span></div>
-                <div class="element-node transition-metal" data-atomic="30" onclick="focusElementNode(30)">Zn<span>30</span></div>
-                <div class="empty-cell" style="grid-column: span 10;"></div>
+                <!-- Row 5 -->
+                <div class="element-node alkali-metal" data-atomic="37" onclick="focusElementNode(37)">Rb<span>37</span></div>
+                <div class="element-node alkaline-earth" data-atomic="38" onclick="focusElementNode(38)">Sr<span>38</span></div>
+                <div class="element-node transition-metal" data-atomic="39" onclick="focusElementNode(39)">Y<span>39</span></div>
+                <div class="element-node transition-metal" data-atomic="40" onclick="focusElementNode(40)">Zr<span>40</span></div>
+                <div class="element-node transition-metal" data-atomic="41" onclick="focusElementNode(41)">Nb<span>41</span></div>
+                <div class="element-node transition-metal" data-atomic="42" onclick="focusElementNode(42)">Mo<span>42</span></div>
+                <div class="element-node transition-metal" data-atomic="43" onclick="focusElementNode(43)">Tc<span>43</span></div>
+                <div class="element-node transition-metal" data-atomic="44" onclick="focusElementNode(44)">Ru<span>44</span></div>
+                <div class="element-node transition-metal" data-atomic="45" onclick="focusElementNode(45)">Rh<span>45</span></div>
+                <div class="element-node transition-metal" data-atomic="46" onclick="focusElementNode(46)">Pd<span>46</span></div>
+                <div class="element-node transition-metal" data-atomic="47" onclick="focusElementNode(47)">Ag<span>47</span></div>
+                <div class="element-node transition-metal" data-atomic="48" onclick="focusElementNode(48)">Cd<span>48</span></div>
+                <div class="element-node post-transition" data-atomic="49" onclick="focusElementNode(49)">In<span>49</span></div>
+                <div class="element-node post-transition" data-atomic="50" onclick="focusElementNode(50)">Sn<span>50</span></div>
+                <div class="element-node metalloid" data-atomic="51" onclick="focusElementNode(51)">Sb<span>51</span></div>
+                <div class="element-node metalloid" data-atomic="52" onclick="focusElementNode(52)">Te<span>52</span></div>
+                <div class="element-node halogen" data-atomic="53" onclick="focusElementNode(53)">I<span>53</span></div>
+                <div class="element-node noble-gas" data-atomic="54" onclick="focusElementNode(54)">Xe<span>54</span></div>
+                <!-- Row 6 -->
+                <div class="element-node alkali-metal" data-atomic="55" onclick="focusElementNode(55)">Cs<span>55</span></div>
+                <div class="element-node alkaline-earth" data-atomic="56" onclick="focusElementNode(56)">Ba<span>56</span></div>
+                <!-- Lanthanide split path notation linked directly into row matrix flow -->
+                <div class="element-node lanthanide" data-atomic="57" onclick="focusElementNode(57)">La<span>57</span></div>
+                <div class="element-node lanthanide" data-atomic="58" onclick="focusElementNode(58)">Ce<span>58</span></div>
+                <div class="element-node lanthanide" data-atomic="59" onclick="focusElementNode(59)">Pr<span>59</span></div>
+                <div class="element-node lanthanide" data-atomic="60" onclick="focusElementNode(60)">Nd<span>60</span></div>
+                <div class="element-node lanthanide" data-atomic="61" onclick="focusElementNode(61)">Pm<span>61</span></div>
+                <div class="element-node lanthanide" data-atomic="62" onclick="focusElementNode(62)">Sm<span>62</span></div>
+                <div class="element-node lanthanide" data-atomic="63" onclick="focusElementNode(63)">Eu<span>63</span></div>
+                <div class="element-node lanthanide" data-atomic="64" onclick="focusElementNode(64)">Gd<span>64</span></div>
+                <div class="element-node lanthanide" data-atomic="65" onclick="focusElementNode(65)">Tb<span>65</span></div>
+                <div class="element-node lanthanide" data-atomic="66" onclick="focusElementNode(66)">Dy<span>66</span></div>
+                <div class="element-node lanthanide" data-atomic="67" onclick="focusElementNode(67)">Ho<span>67</span></div>
+                <div class="element-node lanthanide" data-atomic="68" onclick="focusElementNode(68)">Er<span>68</span></div>
+                <div class="element-node lanthanide" data-atomic="69" onclick="focusElementNode(69)">Tm<span>69</span></div>
+                <div class="element-node lanthanide" data-atomic="70" onclick="focusElementNode(70)">Yb<span>70</span></div>
+                <div class="element-node lanthanide" data-atomic="71" onclick="focusElementNode(71)">Lu<span>71</span></div>
+                <div class="element-node transition-metal" data-atomic="72" onclick="focusElementNode(72)">Hf<span>72</span></div>
+                <div class="element-node transition-metal" data-atomic="73" onclick="focusElementNode(73)">Ta<span>73</span></div>
+                <div class="element-node transition-metal" data-atomic="74" onclick="focusElementNode(74)">W<span>74</span></div>
+                <div class="element-node transition-metal" data-atomic="75" onclick="focusElementNode(75)">Re<span>75</span></div>
+                <div class="element-node transition-metal" data-atomic="76" onclick="focusElementNode(76)">Os<span>76</span></div>
+                <div class="element-node transition-metal" data-atomic="77" onclick="focusElementNode(77)">Ir<span>77</span></div>
+                <div class="element-node transition-metal" data-atomic="78" onclick="focusElementNode(78)">Pt<span>78</span></div>
+                <div class="element-node transition-metal" data-atomic="79" onclick="focusElementNode(79)">Au<span>79</span></div>
+                <div class="element-node transition-metal" data-atomic="80" onclick="focusElementNode(80)">Hg<span>80</span></div>
+                <div class="element-node post-transition" data-atomic="81" onclick="focusElementNode(81)">Tl<span>81</span></div>
+                <div class="element-node post-transition" data-atomic="82" onclick="focusElementNode(82)">Pb<span>82</span></div>
+                <div class="element-node post-transition" data-atomic="83" onclick="focusElementNode(83)">Bi<span>83</span></div>
+                <div class="element-node metalloid" data-atomic="84" onclick="focusElementNode(84)">Po<span>84</span></div>
+                <div class="element-node halogen" data-atomic="85" onclick="focusElementNode(85)">At<span>85</span></div>
+                <div class="element-node noble-gas" data-atomic="86" onclick="focusElementNode(86)">Rn<span>86</span></div>
+                <!-- Row 7 -->
+                <div class="element-node alkali-metal" data-atomic="87" onclick="focusElementNode(87)">Fr<span>87</span></div>
+                <div class="element-node alkaline-earth" data-atomic="88" onclick="focusElementNode(88)">Ra<span>88</span></div>
+                <!-- Actinide split path notation integrated directly to preserve alignment parameters -->
+                <div class="element-node actinide" data-atomic="89" onclick="focusElementNode(89)">Ac<span>89</span></div>
+                <div class="element-node actinide" data-atomic="90" onclick="focusElementNode(90)">Th<span>90</span></div>
+                <div class="element-node actinide" data-atomic="91" onclick="focusElementNode(91)">Pa<span>91</span></div>
+                <div class="element-node actinide" data-atomic="92" onclick="focusElementNode(92)">U<span>92</span></div>
+                <div class="element-node actinide" data-atomic="93" onclick="focusElementNode(93)">Np<span>93</span></div>
+                <div class="element-node actinide" data-atomic="94" onclick="focusElementNode(94)">Pu<span>94</span></div>
+                <div class="element-node actinide" data-atomic="95" onclick="focusElementNode(95)">Am<span>95</span></div>
+                <div class="element-node actinide" data-atomic="96" onclick="focusElementNode(96)">Cm<span>96</span></div>
+                <div class="element-node actinide" data-atomic="97" onclick="focusElementNode(97)">Bk<span>97</span></div>
+                <div class="element-node actinide" data-atomic="98" onclick="focusElementNode(98)">Cf<span>98</span></div>
+                <div class="element-node actinide" data-atomic="99" onclick="focusElementNode(99)">Es<span>99</span></div>
+                <div class="element-node actinide" data-atomic="100" onclick="focusElementNode(100)">Fm<span>100</span></div>
+                <div class="element-node actinide" data-atomic="101" onclick="focusElementNode(101)">Md<span>101</span></div>
+                <div class="element-node actinide" data-atomic="102" onclick="focusElementNode(102)">No<span>102</span></div>
+                <div class="element-node actinide" data-atomic="103" onclick="focusElementNode(103)">Lr<span>103</span></div>
+                <div class="element-node transition-metal" data-atomic="104" onclick="focusElementNode(104)">Rf<span>104</span></div>
+                <div class="element-node transition-metal" data-atomic="105" onclick="focusElementNode(105)">Db<span>105</span></div>
+                <div class="element-node transition-metal" data-atomic="106" onclick="focusElementNode(106)">Sg<span>106</span></div>
+                <div class="element-node transition-metal" data-atomic="107" onclick="focusElementNode(107)">Bh<span>107</span></div>
+                <div class="element-node transition-metal" data-atomic="108" onclick="focusElementNode(108)">Hs<span>108</span></div>
+                <div class="element-node transition-metal" data-atomic="109" onclick="focusElementNode(109)">Mt<span>109</span></div>
+                <div class="element-node transition-metal" data-atomic="110" onclick="focusElementNode(110)">Ds<span>110</span></div>
+                <div class="element-node transition-metal" data-atomic="111" onclick="focusElementNode(111)">Rg<span>111</span></div>
+                <div class="element-node transition-metal" data-atomic="112" onclick="focusElementNode(112)">Cn<span>112</span></div>
+                <div class="element-node post-transition" data-atomic="113" onclick="focusElementNode(113)">Nh<span>113</span></div>
+                <div class="element-node post-transition" data-atomic="114" onclick="focusElementNode(114)">Fl<span>114</span></div>
+                <div class="element-node post-transition" data-atomic="115" onclick="focusElementNode(115)">Mc<span>115</span></div>
+                <div class="element-node post-transition" data-atomic="116" onclick="focusElementNode(116)">Lv<span>116</span></div>
+                <div class="element-node halogen" data-atomic="117" onclick="focusElementNode(117)">Ts<span>117</span></div>
+                <div class="element-node noble-gas" data-atomic="118" onclick="focusElementNode(118)">Og<span>118</span></div>
             </div>
 
             <!-- INTENSITY COMPONENT INSPECTOR READOUT -->
@@ -110,28 +186,38 @@
             </div>
         </section>
 
-        <!-- MODULE 3: THE RUNTIME AI CONSULTATION DASHBOARD -->
-             <!-- ─── MODULE 3: THE RUNTIME AI CONSULTATION DASHBOARD ─── -->
+        <!-- ─── MODULE 3: THE RUNTIME AI CONSULTATION DASHBOARD (SECURED WIDGET) ─── -->
         <section class="section-card">
             <h2>3. Localized Autonomous AI Chemistry Core</h2>
-            <p class="section-desc">Query material combinations, compound classifications, or engineering application vectors natively via the RikMakersHub cloud hub.</p>
+            <p class="section-desc">Query material combinations, compound classifications, or engineering application vectors natively. Bypass server latency and account boundaries effortlessly.</p>
             
-            <!-- Direct iframe container to keep your core token hidden, secure, and serverless -->
-            <div class="ai-chat-interface" style="min-height: 520px; width: 100%; position: relative; background: #020204; border: 1px solid rgba(255,107,0,0.12); border-radius: 4px; overflow: hidden;">
-                <iframe
-                    src="https://udify.app"
-                    style="width: 100%; height: 520px; border: none;"
-                    allow="microphone;"
-                    title="RikMakersHub Industrial AI Core">
-                </iframe>
+            <div class="ai-chat-interface" style="min-height: 180px; width: 100%; display: flex; align-items: center; justify-content: center; background: #050402; border: 1px dashed rgba(255,107,0,0.15); border-radius: 4px;">
+                <p style="color: var(--warm-grey); font-family: monospace; font-size: 0.85rem; text-align: center; margin: 0; line-height: 1.6;">
+                    &gt; RikMakersHub AI Engine Core Synchronized via Cloud Tokens [INDEX].<br>
+                    <span style="color: var(--accent); font-weight: 800;">[STATUS: ONLINE]</span><br>
+                    Use the premium floating chat widget icon visible at the bottom right corner of your screen workspace viewport to execute deep material deconstructions.
+                </p>
             </div>
         </section>
 
     </div>
 
     <footer>
-        © 2026 RikMakersHub Industrial Systems. Designed, Coded, and Documented by Rik. All Intellectual Property Secured.
+        © 2026 RikMakersHub Industrial Systems. Designed, Coded, and Documented by Rik [INDEX]. All Intellectual Property Secured.
     </footer>
+
+    <!-- DIFY FLOATING WIDGET HANDSHAKE SCRIPT INJECTION -->
+    <script>
+        window.difyChatbotConfig = {
+            token: '14d0976a-0af0-4b8b-b355-aa9ec3be7cfd', 
+            baseUrl: 'https://udify.app'
+        }
+    </script>
+    <script
+        src="https://udify.app"
+        id="14d0976a-0af0-4b8b-b355-aa9ec3be7cfd"
+        defer>
+    </script>
 
     <script src="app.js"></script>
 </body>
