@@ -35,6 +35,7 @@
                 <button class="cv-trigger-btn" onclick="simulateCVScan('bronze_coin')">Scan Ancient Bronze Coin</button>
             </div>
 
+            <!-- DYNAMIC TELEMETRY ELEMENT CLASSIFICATION READOUT -->
             <div id="cv-telemetry-readout" class="telemetry-display" style="display: none;">
                 <h3 id="tel-object-name">Detected Matrix: —</h3>
                 <div class="telemetry-grid">
@@ -82,7 +83,25 @@
                 <div class="element-node reactive-nonmetal" data-atomic="16" onclick="focusElementNode(16)">S<span>16</span></div>
                 <div class="element-node halogen" data-atomic="17" onclick="focusElementNode(17)">Cl<span>17</span></div>
                 <div class="element-node noble-gas" data-atomic="18" onclick="focusElementNode(18)">Ar<span>18</span></div>
-
+                <!-- Row 4 -->
+                <div class="element-node alkali-metal" data-atomic="19" onclick="focusElementNode(19)">K<span>19</span></div>
+                <div class="element-node alkaline-earth" data-atomic="20" onclick="focusElementNode(20)">Ca<span>20</span></div>
+                <div class="element-node transition-metal" data-atomic="21" onclick="focusElementNode(21)">Sc<span>21</span></div>
+                <div class="element-node transition-metal" data-atomic="22" onclick="focusElementNode(22)">Ti<span>22</span></div>
+                <div class="element-node transition-metal" data-atomic="23" onclick="focusElementNode(23)">V<span>23</span></div>
+                <div class="element-node transition-metal" data-atomic="24" onclick="focusElementNode(24)">Cr<span>24</span></div>
+                <div class="element-node transition-metal" data-atomic="25" onclick="focusElementNode(25)">Mn<span>25</span></div>
+                <div class="element-node transition-metal" data-atomic="26" onclick="focusElementNode(26)">Fe<span>26</span></div>
+                <div class="element-node transition-metal" data-atomic="27" onclick="focusElementNode(27)">Co<span>27</span></div>
+                <div class="element-node transition-metal" data-atomic="28" onclick="focusElementNode(28)">Ni<span>28</span></div>
+                <div class="element-node transition-metal" data-atomic="29" onclick="focusElementNode(29)">Cu<span>29</span></div>
+                <div class="element-node transition-metal" data-atomic="30" onclick="focusElementNode(30)">Zn<span>30</span></div>
+                <div class="element-node post-transition" data-atomic="31" onclick="focusElementNode(31)">Ga<span>31</span></div>
+                <div class="element-node metalloid" data-atomic="32" onclick="focusElementNode(32)">Ge<span>32</span></div>
+                <div class="element-node metalloid" data-atomic="33" onclick="focusElementNode(33)">As<span>33</span></div>
+                <div class="element-node reactive-nonmetal" data-atomic="34" onclick="focusElementNode(34)">Se<span>34</span></div>
+                <div class="element-node halogen" data-atomic="35" onclick="focusElementNode(35)">Br<span>35</span></div>
+                <div class="element-node noble-gas" data-atomic="36" onclick="focusElementNode(36)">Kr<span>36</span></div>
                 <!-- Row 5 -->
                 <div class="element-node alkali-metal" data-atomic="37" onclick="focusElementNode(37)">Rb<span>37</span></div>
                 <div class="element-node alkaline-earth" data-atomic="38" onclick="focusElementNode(38)">Sr<span>38</span></div>
@@ -105,7 +124,6 @@
                 <!-- Row 6 -->
                 <div class="element-node alkali-metal" data-atomic="55" onclick="focusElementNode(55)">Cs<span>55</span></div>
                 <div class="element-node alkaline-earth" data-atomic="56" onclick="focusElementNode(56)">Ba<span>56</span></div>
-                <!-- Lanthanide split path notation linked directly into row matrix flow -->
                 <div class="element-node lanthanide" data-atomic="57" onclick="focusElementNode(57)">La<span>57</span></div>
                 <div class="element-node lanthanide" data-atomic="58" onclick="focusElementNode(58)">Ce<span>58</span></div>
                 <div class="element-node lanthanide" data-atomic="59" onclick="focusElementNode(59)">Pr<span>59</span></div>
@@ -139,7 +157,6 @@
                 <!-- Row 7 -->
                 <div class="element-node alkali-metal" data-atomic="87" onclick="focusElementNode(87)">Fr<span>87</span></div>
                 <div class="element-node alkaline-earth" data-atomic="88" onclick="focusElementNode(88)">Ra<span>88</span></div>
-                <!-- Actinide split path notation integrated directly to preserve alignment parameters -->
                 <div class="element-node actinide" data-atomic="89" onclick="focusElementNode(89)">Ac<span>89</span></div>
                 <div class="element-node actinide" data-atomic="90" onclick="focusElementNode(90)">Th<span>90</span></div>
                 <div class="element-node actinide" data-atomic="91" onclick="focusElementNode(91)">Pa<span>91</span></div>
@@ -186,17 +203,28 @@
             </div>
         </section>
 
-        <!-- ─── MODULE 3: THE RUNTIME AI CONSULTATION DASHBOARD (SECURED WIDGET) ─── -->
+        <!-- ─── MODULE 3: THE RUNTIME AI CONSULTATION DASHBOARD (COMPUTED FRAME) ─── -->
         <section class="section-card">
             <h2>3. Localized Autonomous AI Chemistry Core</h2>
             <p class="section-desc">Query material combinations, compound classifications, or engineering application vectors natively. Bypass server latency and account boundaries effortlessly.</p>
             
-            <div class="ai-chat-interface" style="min-height: 180px; width: 100%; display: flex; align-items: center; justify-content: center; background: #050402; border: 1px dashed rgba(255,107,0,0.15); border-radius: 4px;">
-                <p style="color: var(--warm-grey); font-family: monospace; font-size: 0.85rem; text-align: center; margin: 0; line-height: 1.6;">
-                    &gt; RikMakersHub AI Engine Core Synchronized via Cloud Tokens [INDEX].<br>
-                    <span style="color: var(--accent); font-weight: 800;">[STATUS: ONLINE]</span><br>
-                    Use the premium floating chat widget icon visible at the bottom right corner of your screen workspace viewport to execute deep material deconstructions.
-                </p>
+            <div class="ai-chat-interface" style="background: #050402; border: 1px solid rgba(255, 107, 0, 0.15); border-radius: 4px; padding: 25px; box-shadow: inset 0 0 20px rgba(0,0,0,0.8);">
+                <div style="font-family: monospace; font-size: 0.85rem; line-height: 1.7; color: #FFF;">
+                    <p style="margin: 0; color: var(--warm-grey);">&gt; AUTHENTICATING ACCESS REGISTRY NODE...</p>
+                    <p style="margin: 0 0 10px 0; color: #22c55e;">[SUCCESS] CONNECTED TO DIFY.AI CLOUD FLOW HUB [14d0976a-0af0-4b8b-b355-aa9ec3be7cfd]</p>
+                    
+                    <p style="margin: 0; color: var(--warm-grey);">&gt; INGESTING MATERIAL COMPOSITION ENGINE CORE...</p>
+                    <p style="margin: 0 0 10px 0; color: #22c55e;">[SUCCESS] GROQ LLAMA-3.1-8B-INSTANT RUNTIME ONLINE [0ms LATENCY]</p>
+                    
+                    <p style="margin: 0; color: var(--warm-grey);">&gt; SYNCHRONIZING TARGET PARAMETERS...</p>
+                    <p style="margin: 0 0 20px 0; color: var(--accent); font-weight: 800;">[STATUS] RIKMAKERSHUB INDUSTRIAL AI CORES OPERATING ON 100% HEALTH MATRIX</p>
+                    
+                    <div style="border-top: 1px dashed rgba(255,107,0,0.2); padding-top: 15px; text-align: center;">
+                        <button class="cv-trigger-btn" style="margin: 0; padding: 10px 20px; font-size: 0.75rem;" onclick="triggerFloatingChatCore()">
+                            Launch Live Consultation Console
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -206,7 +234,7 @@
         © 2026 RikMakersHub Industrial Systems. Designed, Coded, and Documented by Rik [INDEX]. All Intellectual Property Secured.
     </footer>
 
-    <!-- DIFY FLOATING WIDGET HANDSHAKE SCRIPT INJECTION -->
+    <!-- DIFY FLOATING WIDGET HANDSHAKE SCRIPT INJECTION (BYPASSES IFRAME COOPERATION FAULTS) -->
     <script>
         window.difyChatbotConfig = {
             token: '14d0976a-0af0-4b8b-b355-aa9ec3be7cfd', 
