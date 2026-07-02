@@ -255,3 +255,4 @@ function triggerFloatingChatCore() {
     // Attempt 2: Direct fallback URL pop-up bridge so the client session NEVER breaks
     window.open("https://udify.app", "_blank", "width=400,height=600,resizable=yes");
 }
+
