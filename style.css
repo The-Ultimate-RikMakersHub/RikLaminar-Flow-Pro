@@ -154,33 +154,38 @@ h2 {
 
 .cv-trigger-btn:hover { background-color: #E05E00; }
 
-/* IN-WEB PERIODIC GRID HARDWARE ELEMENT MATRIX */
+/* IN-WEB PERIODIC GRID HARDWARE ELEMENT MATRIX STRUCTURE */
 .periodic-grid-housing {
     display: grid;
-    grid-template-columns: repeat(18, 1fr);
+    grid-template-columns: repeat(18, minmax(45px, 1fr));
     gap: 6px;
     overflow-x: auto;
-    padding-bottom: 10px;
+    padding: 15px;
+    background: #050402;
+    border: 1px solid rgba(255, 107, 0, 0.08);
+    border-radius: 4px;
 }
 
 .element-node {
     background: #211A10;
     border: 1px solid rgba(255,255,255,0.03);
-    padding: 12px 4px;
+    padding: 14px 2px;
     text-align: center;
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border-radius: 3px;
     cursor: pointer;
     position: relative;
     color: #FFF;
-    transition: transform 0.15s, border-color 0.15s;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+    user-select: none;
 }
 
 .element-node:hover {
-    transform: scale(1.12);
+    transform: scale(1.15);
     border-color: var(--accent);
-    z-index: 5;
+    z-index: 10;
+    box-shadow: 0 0 12px var(--accent-glow);
 }
 
 .element-node span {
@@ -191,7 +196,7 @@ h2 {
     font-weight: 400;
 }
 
-/* Color Coding Modules */
+/* Structural Element Class Color Indicators */
 .reactive-nonmetal { background: #2d251e; border-left: 2px solid #a855f7; }
 .noble-gas { background: #1c232e; border-left: 2px solid #3b82f6; }
 .alkali-metal { background: #331c19; border-left: 2px solid #ef4444; }
@@ -200,6 +205,8 @@ h2 {
 .halogen { background: #1c2b24; border-left: 2px solid #10b981; }
 .transition-metal { background: #1e1e1e; border-left: 2px solid #6366f1; }
 .post-transition { background: #24282e; border-left: 2px solid #06b6d4; }
+.lanthanide { background: #1f292e; border-left: 2px solid #22c55e; }
+.actinide { background: #2c1d2e; border-left: 2px solid #ec4899; }
 .element-node.active-highlight { border: 2px solid var(--accent) !important; box-shadow: 0 0 15px var(--accent-glow); }
 
 .empty-cell { min-width: 0; }
@@ -258,35 +265,13 @@ h2 {
 }
 .passport-anchor-btn:hover { text-decoration: underline; }
 
-/* AI TERMINAL GRAPHICS */
+/* AI TERMINAL CONTAINER WORKSPACE Layout */
 .ai-chat-interface {
     background: #020204;
     border: 1px solid rgba(255,255,255,0.04);
     border-radius: 4px;
     padding: 20px;
 }
-.ai-response-stream {
-    background: #080705;
-    border: 1px solid rgba(255, 107, 0, 0.15);
-    height: 140px;
-    border-radius: 4px;
-    padding: 15px;
-    overflow-y: auto;
-    font-family: monospace;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-#ai-terminal-input {
-    flex-grow: 1;
-    background: #110D07;
-    border: 1px solid rgba(255, 107, 0, 0.3);
-    padding: 14px;
-    color: #fff;
-    border-radius: 4px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-}
-#ai-terminal-input:focus { outline: 1px solid var(--accent); }
 
 footer {
     text-align: center;
@@ -294,4 +279,10 @@ footer {
     color: var(--warm-grey);
     font-size: 0.8rem;
     border-top: 1px solid rgba(255,107,0,0.05);
+}
+
+/* NATIVE DIFY CHAT FLOATING BUTTON OVERRIDE SYSTEM RULES */
+#dify-chatbot-bubble-button {
+    background-color: var(--accent) !important;
+    box-shadow: 0 8px 24px rgba(255, 107, 0, 0.3) !important;
 }
