@@ -286,3 +286,30 @@ footer {
     background-color: var(--accent) !important;
     box-shadow: 0 8px 24px rgba(255, 107, 0, 0.3) !important;
 }
+/* FORCE FLOATING CHAT WIDGET INTO BOTTOM RIGHT CORNER VIEWPORT WITH LUXURY GLOW */
+#dify-chatbot-bubble-button {
+    position: fixed !important;
+    bottom: 25px !important;
+    right: 25px !important;
+    z-index: 999999 !important;
+    background-color: var(--accent) !important;
+    box-shadow: 0 8px 24px rgba(255, 107, 0, 0.35) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    transition: transform 0.2s ease !important;
+}
+
+#dify-chatbot-bubble-button:hover {
+    transform: scale(1.08) !important;
+}
+
+/* Force container alignment window tracking */
+.dify-chatbot-container {
+    position: fixed !important;
+    bottom: 95px !important;
+    right: 25px !important;
+    z-index: 999999 !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 107, 0, 0.15) !important;
+}
