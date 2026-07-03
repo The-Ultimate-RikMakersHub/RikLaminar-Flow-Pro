@@ -1,9 +1,3 @@
-/**
- * RikMakersHub Laminar Flow Core Processing Engine
- * Core Logic Architecture Module — app.js (Part 1 of 8)
- * Element Database Index Registry: 1 to 17
- * Architect: Rik (Class 8 Sovereign Matrix)
- */
 
 const elementDatabase = {
     1: { name: "Hydrogen", mass: "1.008 u", config: "1s¹" },
