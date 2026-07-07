@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaminarFlow-PRO | RikMakersHub Material Engine</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>LaminarFlow-PRO | RikMakersHQ Commercial Release</title>
+    <!-- CORE HYPER-LINK TO INJECT ANIMATED ATOM GIF AS MASTER TAB FAVICON -->
+    <link rel="icon" type="image/gif" href="atom.gif">
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,28 +13,45 @@
 
     <header>
         <h1>LaminarFlow-PRO</h1>
-        <p>Computer Vision Object Deconstruction Engine · RikMakersHub Sovereign Branch</p>
+        <p>Computer Vision Object Deconstruction Engine · RikMakersHQ Commercial Branch</p>
     </header>
 
     <div class="container">
 
-        <!-- ─── MODULE 1: THE COMPUTER VISION SIMULATION TARGET INTERCEPT ─── -->
+        <!-- ─── MODULE 1: THE SPLIT-GRID HARDWARE CAMERA INTERCEPT ─── -->
         <section class="section-card">
             <h2>1. Real-Time Computer Vision Alloy Intercept</h2>
-            <p class="section-desc">Point the device camera array at physical materials to auto-classify compounds, extract elementary matrix fractions, and map elemental components.</p>
+            <p class="section-desc">Initialize hardware permission matrices to auto-classify physical compounds or upload local media assets directly to the scanner array.</p>
             
-            <div class="cv-viewport-housing">
-                <div class="viewport-overlay-box">
-                    <span class="laser-scanner-line"></span>
-                    <div id="cv-bounding-box" class="target-bounding-box"></div>
-                    <span class="viewport-status-badge">CV LIVE READY</span>
+            <div class="split-viewport-grid">
+                <!-- LEFT COLUMN: LIVE HARDWARE WEBCAM VIEWPORT -->
+                <div class="cv-viewport-housing">
+                    <video id="hardware-webcam-stream" autoplay playsinline style="display:none; width:100%; height:100%; object-fit:cover;"></video>
+                    <div id="viewport-fallback-canvas" class="viewport-overlay-box">
+                        <span class="laser-scanner-line"></span>
+                        <div id="cv-bounding-box" class="target-bounding-box"></div>
+                        <span class="viewport-status-badge" id="camera-status-label">CV DISCONNECTED</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: CONSTANTLY LOOPING LOCAL ATOM.GIF DECK -->
+                <div class="gif-telemetry-housing">
+                    <img src="atom.gif" alt="Matrix Telemetry Core" class="looping-matrix-gif">
+                    <div class="gif-tint-overlay"></div>
                 </div>
             </div>
 
-            <div class="cv-control-row">
-                <button class="cv-trigger-btn" onclick="simulateCVScan('steel_glass')">Scan Stainless Steel Glass</button>
-                <button class="cv-trigger-btn" onclick="simulateCVScan('brass_valve')">Scan Brass Hardware</button>
-                <button class="cv-trigger-btn" onclick="simulateCVScan('bronze_coin')">Scan Ancient Bronze Coin</button>
+            <!-- HARDWARE HANDSHAKE CONTROL INTERFACE -->
+            <div class="cv-control-row" style="margin-top: 20px;">
+                <button class="cv-trigger-btn" style="background-color: #22c55e;" onclick="initializeHardwareCamera()">Open CV for Environmental Inspection</button>
+            </div>
+
+            <!-- ADVANCED DRAG AND DROP PORTFOLIO GUESSER LAYER -->
+            <div class="drop-zone-container" id="alloy-drop-perimeter">
+                <p style="margin: 0; font-family: monospace; font-size: 0.85rem;">
+                    &gt; DRAG & DROP COMPONENT IMAGE HERE OR <span style="color: var(--accent); cursor: pointer;">BROWSE LOCAL STORAGE</span>
+                </p>
+                <input type="file" id="local-media-injector" accept="image/*" onchange="processDroppedAlloyImage(event)" style="display: none;">
             </div>
 
             <!-- DYNAMIC TELEMETRY ELEMENT CLASSIFICATION READOUT -->
@@ -143,7 +161,7 @@
                 <div class="element-node transition-metal" data-atomic="72" onclick="focusElementNode(72)">Hf<span>72</span></div>
                 <div class="element-node transition-metal" data-atomic="73" onclick="focusElementNode(73)">Ta<span>73</span></div>
                 <div class="element-node transition-metal" data-atomic="74" onclick="focusElementNode(74)">W<span>74</span></div>
-                <div class="element-node transition-metal" data-atomic="75" onclick="focusElementNode(75)">Re<span>75</span></div>
+                <div class="element-node transition-metal" data-atomic="75" onclick="focusElementNode(7575)">Re<span>75</span></div>
                 <div class="element-node transition-metal" data-atomic="76" onclick="focusElementNode(76)">Os<span>76</span></div>
                 <div class="element-node transition-metal" data-atomic="77" onclick="focusElementNode(77)">Ir<span>77</span></div>
                 <div class="element-node transition-metal" data-atomic="78" onclick="focusElementNode(78)">Pt<span>78</span></div>
@@ -218,7 +236,7 @@
                     <p style="margin: 0 0 10px 0; color: #22c55e;">[SUCCESS] GROQ LLAMA-3.1-8B-INSTANT RUNTIME ONLINE [0ms LATENCY]</p>
                     
                     <p style="margin: 0; color: var(--warm-grey);">&gt; SYNCHRONIZING TARGET PARAMETERS...</p>
-                    <p style="margin: 0 0 20px 0; color: var(--accent); font-weight: 800;">[STATUS] RIKMAKERSHUB INDUSTRIAL AI CORES OPERATING ON 100% HEALTH MATRIX</p>
+                    <p style="margin: 0 0 20px 0; color: var(--accent); font-weight: 800;">[STATUS] RIKMAKERSHQ INDUSTRIAL AI CORES OPERATING ON 100% HEALTH MATRIX</p>
                     
                     <div style="border-top: 1px dashed rgba(255,107,0,0.2); padding-top: 15px; text-align: center;">
                         <button class="cv-trigger-btn" style="margin: 0; padding: 10px 20px; font-size: 0.75rem;" onclick="triggerFloatingChatCore()">
@@ -232,7 +250,7 @@
     </div>
 
     <footer>
-        © 2026 RikMakersHub Industrial Systems. Designed, Coded, and Documented by Rik [INDEX]. All Intellectual Property Secured.
+        © 2026 RikMakersHQ Industrial Systems. Designed, Coded, and Documented by Rik. All Intellectual Property Secured.
     </footer>
 
     <!-- DIFY FLOATING WIDGET HANDSHAKE SCRIPT INJECTION (BYPASSES IFRAME COOPERATION FAULTS) -->
@@ -242,12 +260,7 @@
             baseUrl: 'https://udify.app'
         }
     </script>
-    <script
-        src="https://udify.app"
-        id="14d0976a-0af0-4b8b-b355-aa9ec3be7cfd"
-        defer>
-    </script>
-
+    <script src="https://udify.app" id="14d0976a-0af0-4b8b-b355-aa9ec3be7cfd" defer></script>
     <script src="app.js"></script>
 </body>
 </html>
