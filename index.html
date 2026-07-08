@@ -261,7 +261,7 @@
 
     </main>
 
-    <footer class="app-footer">
+      <footer class="app-footer">
         &copy; 2026 RikMakersHQ Industrial Systems. Designed, Coded, and Maintained by Rik. All Rights Protected under Brand Registry.
     </footer>
 
@@ -273,7 +273,11 @@
         }
     </script>
     <script src="https://udify.app" id="14d0976a-0af0-4b8b-b355-aa9ec3be7cfd" defer></script>
-    <script src="app.js"></script>
+
+    <!-- CRITICAL FIX: DEFER SCRIPTS TO ENSURE THE DOM IS FULLY PAINTED BEFORE LISTENERS ATTACH -->
+    <script src="elements.js" defer></script>
+    <script src="app.js" defer></script>
 </body>
 </html>
+
 
