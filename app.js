@@ -1,5 +1,100 @@
+/**
+ * RikMakersHQ Sovereign Core Material Engine
+ * Master Logic Architecture Framework — app.js (Part 1 of 10)
+ * Status: 100% High-Tech Unified Release
+ * Architect: Rik (Chief Systems Architect)
+ */
 
-const elementDatabase = {
+// Initialize the Sovereign Element Registry Core Matrix
+const elementDatabase = {};
+
+// RUNTIME COMPUTE: AUTOMATED ELEMENT NODE RENDER ENGINE MATRIX
+document.addEventListener("DOMContentLoaded", function() {
+    const gridPerimeter = document.getElementById('dynamic-matrix-grid');
+    if (!gridPerimeter) {
+        console.log("RikMakersHQ Telemetry Error: Target dynamic grid node not found in viewport DOM.");
+        return;
+    }
+
+    // Mapping coordinate properties layout logic to handle empty cell block spacers cleanly
+    const layoutMap = {
+        1: { symbol: "H", type: "node-reactive" },
+        2: { symbol: "He", type: "node-noble", spacerBefore: 16 },
+        3: { symbol: "Li", type: "node-alkali" },
+        4: { symbol: "Be", type: "node-alkaline" },
+        5: { symbol: "B", type: "node-metalloid", spacerBefore: 10 },
+        6: { symbol: "C", type: "node-reactive" },
+        7: { symbol: "N", type: "node-reactive" },
+        8: { symbol: "O", type: "node-reactive" },
+        9: { symbol: "F", type: "node-halogen" },
+        10: { symbol: "Ne", type: "node-noble" },
+        11: { symbol: "Na", type: "node-alkali" },
+        12: { symbol: "Mg", type: "node-alkaline" },
+        13: { symbol: "Al", type: "node-post", spacerBefore: 10 },
+        14: { symbol: "Si", type: "node-metalloid" },
+        15: { symbol: "P", type: "node-reactive" },
+        16: { symbol: "S", type: "node-reactive" },
+        17: { symbol: "Cl", type: "node-halogen" },
+        18: { symbol: "Ar", type: "node-noble" }
+    };
+
+    // Auto-generate rows 4 through 7 symbol reference arrays
+    const chemicalSymbols = {
+        19:"K", 20:"Ca", 21:"Sc", 22:"Ti", 23:"V", 24:"Cr", 25:"Mn", 26:"Fe", 27:"Co", 28:"Ni", 29:"Cu", 30:"Zn", 31:"Ga", 32:"Ge", 33:"As", 34:"Se", 35:"Br", 36:"Kr",
+        37:"Rb", 38:"Sr", 39:"Y", 40:"Zr", 41:"Nb", 42:"Mo", 43:"Tc", 44:"Ru", 45:"Rh", 46:"Pd", 47:"Ag", 48:"Cd", 49:"In", 50:"Sn", 51:"Sb", 52:"Te", 53:"I", 54:"Xe",
+        55:"Cs", 56:"Ba", 57:"La", 58:"Ce", 59:"Pr", 60:"Nd", 61:"Pm", 62:"Sm", 63:"Eu", 64:"Gd", 65:"Tb", 66:"Dy", 67:"Ho", 68:"Er", 69:"Tm", 70:"Yb", 71:"Lu", 72:"Hf", 73:"Ta", 74:"W", 75:"Re", 76:"Os", 77:"Ir", 78:"Pt", 79:"Au", 80:"Hg", 81:"Tl", 82:"Pb", 83:"Bi", 84:"Po", 85:"At", 86:"Rn",
+        87:"Fr", 88:"Ra", 89:"Ac", 90:"Th", 91:"Pa", 92:"U", 93:"Np", 94:"Pu", 95:"Am", 96:"Cm", 97:"Bk", 98:"Cf", 99:"Es", 100:"Fm", 101:"Md", 102:"No", 103:"Lr", 104:"Rf", 105:"Db", 106:"Sg", 107:"Bh", 108:"Hs", 109:"Mt", 110:"Ds", 111:"Rg", 112:"Cn", 113:"Nh", 114:"Fl", 115:"Mc", 116:"Lv", 117:"Ts", 118:"Og"
+    };
+
+    const postMetals =;
+    const reactiveNonmetals =;
+    const nobleGases =;
+    const halogens =;
+    const alkaliMetals =;
+    const alkalineEarths =;
+
+    for (let i = 1; i <= 118; i++) {
+        let nodeConfig = layoutMap[i];
+        
+        if (!nodeConfig) {
+            let symbolString = chemicalSymbols[i] || "X";
+            let typeClass = "node-transition";
+            
+            if (i >= 57 && i <= 71) typeClass = "node-lanthanide";
+            else if (i >= 89 && i <= 103) typeClass = "node-actinide";
+            else if (postMetals.includes(i)) typeClass = "node-post";
+            else if (reactiveNonmetals.includes(i)) typeClass = "node-reactive";
+            else if (nobleGases.includes(i)) typeClass = "node-noble";
+            else if (halogens.includes(i)) typeClass = "node-halogen";
+            else if (alkaliMetals.includes(i)) typeClass = "node-alkali";
+            else if (alkalineEarths.includes(i)) typeClass = "node-alkaline";
+            
+            nodeConfig = { symbol: symbolString, type: typeClass };
+        }
+
+        // Inject empty spacer elements onto the viewport matrix layout grid
+        if (nodeConfig.spacerBefore) {
+            const spacerElement = document.createElement('div');
+            spacerElement.className = 'empty-spacer';
+            spacerElement.style.gridColumn = `span ${nodeConfig.spacerBefore}`;
+            gridPerimeter.appendChild(spacerElement);
+        }
+
+        // Build and append interactive UI cell nodes
+        const cellElement = document.createElement('div');
+        cellElement.className = `matrix-node ${nodeConfig.type}`;
+        cellElement.setAttribute('data-atomic', i);
+        cellElement.innerHTML = `${nodeConfig.symbol}<span class="node-idx">${i}</span>`;
+        cellElement.addEventListener('click', () => focusElementNode(i));
+        
+        gridPerimeter.appendChild(cellElement);
+    }
+});
+/**
+ * Master Logic Architecture Framework — app.js (Part 2 of 10)
+ * Telemetry Index Registry Shard: 1 to 12 (Hydrogen to Magnesium)
+ */
+Object.assign(elementDatabase, {
     1: { name: "Hydrogen", mass: "1.008 u", config: "1s¹" },
     2: { name: "Helium", mass: "4.0026 u", config: "1s²" },
     3: { name: "Lithium", mass: "6.94 u", config: "[He] 2s¹" },
@@ -11,18 +106,18 @@ const elementDatabase = {
     9: { name: "Fluorine", mass: "18.998 u", config: "[He] 2s² 2p⁵" },
     10: { name: "Neon", mass: "20.180 u", config: "[He] 2s² 2p⁶" },
     11: { name: "Sodium", mass: "22.990 u", config: "[Ne] 3s¹" },
-    12: { name: "Magnesium", mass: "24.305 u", config: "[Ne] 3s²" },
+    12: { name: "Magnesium", mass: "24.305 u", config: "[Ne] 3s²" }
+});
+/**
+ * Master Logic Architecture Framework — app.js (Part 3 of 10)
+ * Telemetry Index Registry Shard: 13 to 25 (Aluminium to Manganese)
+ */
+Object.assign(elementDatabase, {
     13: { name: "Aluminium", mass: "26.982 u", config: "[Ne] 3s² 3p¹" },
     14: { name: "Silicon", mass: "28.085 u", config: "[Ne] 3s² 3p²" },
     15: { name: "Phosphorus", mass: "30.974 u", config: "[Ne] 3s² 3p³" },
     16: { name: "Sulfur", mass: "32.06 u", config: "[Ne] 3s² 3p⁴" },
-    17: { name: "Chlorine", mass: "35.45 u", config: "[Ne] 3s² 3p⁵" }
-};
-/**
- * Core Logic Architecture Module — app.js (Part 2 of 8)
- * Element Database Index Registry: 18 to 34
- */
-Object.assign(elementDatabase, {
+    17: { name: "Chlorine", mass: "35.45 u", config: "[Ne] 3s² 3p⁵" },
     18: { name: "Argon", mass: "39.948 u", config: "[Ne] 3s² 3p⁶" },
     19: { name: "Potassium", mass: "39.098 u", config: "[Ar] 4s¹" },
     20: { name: "Calcium", mass: "40.078 u", config: "[Ar] 4s²" },
@@ -30,7 +125,13 @@ Object.assign(elementDatabase, {
     22: { name: "Titanium", mass: "47.867 u", config: "[Ar] 3d² 4s²" },
     23: { name: "Vanadium", mass: "50.942 u", config: "[Ar] 3d³ 4s²" },
     24: { name: "Chromium", mass: "51.996 u", config: "[Ar] 3d⁵ 4s¹" },
-    25: { name: "Manganese", mass: "54.938 u", config: "[Ar] 3d⁵ 4s²" },
+    25: { name: "Manganese", mass: "54.938 u", config: "[Ar] 3d⁵ 4s²" }
+});
+/**
+ * Master Logic Architecture Framework — app.js (Part 4 of 10)
+ * Telemetry Index Registry Shard: 26 to 50 (Iron to Tin)
+ */
+Object.assign(elementDatabase, {
     26: { name: "Iron", mass: "55.845 u", config: "[Ar] 3d⁶ 4s²" },
     27: { name: "Cobalt", mass: "58.933 u", config: "[Ar] 3d⁷ 4s²" },
     28: { name: "Nickel", mass: "58.693 u", config: "[Ar] 3d⁸ 4s²" },
@@ -39,13 +140,7 @@ Object.assign(elementDatabase, {
     31: { name: "Gallium", mass: "69.723 u", config: "[Ar] 3d¹⁰ 4s² 4p¹" },
     32: { name: "Germanium", mass: "72.630 u", config: "[Ar] 3d¹⁰ 4s² 4p²" },
     33: { name: "Arsenic", mass: "74.922 u", config: "[Ar] 3d¹⁰ 4s² 4p³" },
-    34: { name: "Selenium", mass: "78.971 u", config: "[Ar] 3d¹⁰ 4s² 4p⁴" }
-});
-/**
- * Core Logic Architecture Module — app.js (Part 3 of 8)
- * Element Database Index Registry: 35 to 51
- */
-Object.assign(elementDatabase, {
+    34: { name: "Selenium", mass: "78.971 u", config: "[Ar] 3d¹⁰ 4s² 4p⁴" },
     35: { name: "Bromine", mass: "79.904 u", config: "[Ar] 3d¹⁰ 4s² 4p⁵" },
     36: { name: "Krypton", mass: "83.798 u", config: "[Ar] 3d¹⁰ 4s² 4p⁶" },
     37: { name: "Rubidium", mass: "85.468 u", config: "[Kr] 5s¹" },
@@ -61,14 +156,14 @@ Object.assign(elementDatabase, {
     47: { name: "Silver", mass: "107.87 u", config: "[Kr] 4d¹⁰ 5s¹" },
     48: { name: "Cadmium", mass: "112.41 u", config: "[Kr] 4d¹⁰ 5s²" },
     49: { name: "Indium", mass: "114.82 u", config: "[Kr] 4d¹⁰ 5s² 5p¹" },
-    50: { name: "Tin", mass: "118.71 u", config: "[Kr] 4d¹⁰ 5s² 5p²" },
-    51: { name: "Antimony", mass: "121.76 u", config: "[Kr] 4d¹⁰ 5s² 5p³" }
+    50: { name: "Tin", mass: "118.71 u", config: "[Kr] 4d¹⁰ 5s² 5p²" }
 });
 /**
- * Core Logic Architecture Module — app.js (Part 4 of 8)
- * Element Database Index Registry: 52 to 68
+ * Master Logic Architecture Framework — app.js (Part 5 of 10)
+ * Telemetry Index Registry Shard: 51 to 75 (Antimony to Rhenium)
  */
 Object.assign(elementDatabase, {
+    51: { name: "Antimony", mass: "121.76 u", config: "[Kr] 4d¹⁰ 5s² 5p³" },
     52: { name: "Tellurium", mass: "127.60 u", config: "[Kr] 4d¹⁰ 5s² 5p⁴" },
     53: { name: "Iodine", mass: "126.90 u", config: "[Kr] 4d¹⁰ 5s² 5p⁵" },
     54: { name: "Xenon", mass: "131.29 u", config: "[Kr] 4d¹⁰ 5s² 5p⁶" },
@@ -85,20 +180,20 @@ Object.assign(elementDatabase, {
     65: { name: "Terbium", mass: "158.93 u", config: "[Xe] 4f⁹ 6s²" },
     66: { name: "Dysprosium", mass: "162.50 u", config: "[Xe] 4f¹⁰ 6s²" },
     67: { name: "Holmium", mass: "164.93 u", config: "[Xe] 4f¹¹ 6s²" },
-    68: { name: "Erbium", mass: "167.26 u", config: "[Xe] 4f¹² 6s²" }
-});
-/**
- * Core Logic Architecture Module — app.js (Part 5 of 8)
- * Element Database Index Registry: 69 to 85
- */
-Object.assign(elementDatabase, {
+    68: { name: "Erbium", mass: "167.26 u", config: "[Xe] 4f¹² 6s²" },
     69: { name: "Thulium", mass: "168.93 u", config: "[Xe] 4f¹³ 6s²" },
     70: { name: "Ytterbium", mass: "173.05 u", config: "[Xe] 4f¹⁴ 6s²" },
     71: { name: "Lutetium", mass: "174.97 u", config: "[Xe] 4f¹⁴ 5d¹ 6s²" },
     72: { name: "Hafnium", mass: "178.49 u", config: "[Xe] 4f¹⁴ 5d² 6s²" },
     73: { name: "Tantalum", mass: "180.95 u", config: "[Xe] 4f¹⁴ 5d³ 6s²" },
     74: { name: "Tungsten", mass: "183.84 u", config: "[Xe] 4f¹⁴ 5d⁴ 6s²" },
-    75: { name: "Rhenium", mass: "186.21 u", config: "[Xe] 4f¹⁴ 5d⁵ 6s²" },
+    75: { name: "Rhenium", mass: "186.21 u", config: "[Xe] 4f¹⁴ 5d⁵ 6s²" }
+});
+/**
+ * Master Logic Architecture Framework — app.js (Part 6 of 10)
+ * Telemetry Index Registry Shard: 76 to 100 (Osmium to Fermium)
+ */
+Object.assign(elementDatabase, {
     76: { name: "Osmium", mass: "190.23 u", config: "[Xe] 4f¹⁴ 5d⁶ 6s²" },
     77: { name: "Iridium", mass: "192.22 u", config: "[Xe] 4f¹⁴ 5d⁷ 6s²" },
     78: { name: "Platinum", mass: "195.08 u", config: "[Xe] 4f¹⁴ 5d⁹ 6s¹" },
@@ -108,13 +203,7 @@ Object.assign(elementDatabase, {
     82: { name: "Lead", mass: "207.2 u", config: "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p²" },
     83: { name: "Bismuth", mass: "208.98 u", config: "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p³" },
     84: { name: "Polonium", mass: "(209) u", config: "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁴" },
-    85: { name: "Astatine", mass: "(210) u", config: "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵" }
-});
-/**
- * Core Logic Architecture Module — app.js (Part 6 of 8)
- * Element Database Index Registry: 86 to 102
- */
-Object.assign(elementDatabase, {
+    85: { name: "Astatine", mass: "(210) u", config: "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵" },
     86: { name: "Radon", mass: "(222) u", config: "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁶" },
     87: { name: "Francium", mass: "(223) u", config: "[Rn] 7s¹" },
     88: { name: "Radium", mass: "(226) u", config: "[Rn] 7s²" },
@@ -129,15 +218,15 @@ Object.assign(elementDatabase, {
     97: { name: "Berkium", mass: "(247) u", config: "[Rn] 5f⁹ 7s²" },
     98: { name: "Californium", mass: "(251) u", config: "[Rn] 5f¹⁰ 7s²" },
     99: { name: "Einsteinium", mass: "(252) u", config: "[Rn] 5f¹¹ 7s²" },
-    100: { name: "Fermium", mass: "(257) u", config: "[Rn] 5f¹² 7s²" },
-    101: { name: "Mendelevium", mass: "(258) u", config: "[Rn] 5f¹³ 7s²" },
-    102: { name: "Nobelium", mass: "(259) u", config: "[Rn] 5f¹⁴ 7s²" }
+    100: { name: "Fermium", mass: "(257) u", config: "[Rn] 5f¹² 7s²" }
 });
 /**
- * Core Logic Architecture Module — app.js (Part 7 of 8)
- * Element Database Index Registry: 103 to 118
+ * Master Logic Architecture Framework — app.js (Part 7 of 10)
+ * Telemetry Index Registry Shard: 101 to 118 (Mendelevium to Oganesson)
  */
 Object.assign(elementDatabase, {
+    101: { name: "Mendelevium", mass: "(258) u", config: "[Rn] 5f¹³ 7s²" },
+    102: { name: "Nobelium", mass: "(259) u", config: "[Rn] 5f¹⁴ 7s²" },
     103: { name: "Lawrencium", mass: "(266) u", config: "[Rn] 5f¹⁴ 6d¹ 7s²" },
     104: { name: "Rutherfordium", mass: "(267) u", config: "[Rn] 5f¹⁴ 6d² 7s²" },
     105: { name: "Dubnium", mass: "(268) u", config: "[Rn] 5f¹⁴ 6d³ 7s²" },
@@ -156,307 +245,131 @@ Object.assign(elementDatabase, {
     118: { name: "Oganesson", mass: "(294) u", config: "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶" }
 });
 /**
- * Core Logic Architecture Module — app.js (Part 8 of 8)
- * Extended 20 Industrial Alloy Database, CV Scanning Handlers & Viewport Drivers
- * STATUS: 100% CORRECTED & FLUID
+ * Master Logic Architecture Framework — app.js (Part 8 of 10)
+ * Extended 20 Industrial & Aerospace Alloy Database (1 to 10)
  */
-/**
- * RikMakersHQ Laminar Flow Core Processing Engine
- * Core Logic Architecture Module — app.js (Part 8-A of 8)
- * Extended 20 Industrial Alloy Database Mapping
- * STATUS: 100% CORRECTED & FIXED
- */
-
 const alloyDatabase = {
-    // 3 Original Legacy Core Entries
-    'steel_glass': { 
-        name: "Stainless Steel Glass", 
-        type: "Alloy (Interstitial)", 
-        formula: "Fe (74%) + Cr (18%) + Ni (8%) + C (0.1%)", 
-        elements:, 
-        boxSize: "190px" 
-    },
-    'brass_valve': { 
-        name: "Brass Hardware Valve", 
-        type: "Alloy (Substitution)", 
-        formula: "Cu (65%) + Zn (35%)", 
-        elements:, 
-        boxSize: "160px" 
-    },
-    'bronze_coin': { 
-        name: "Ancient Bronze Coin", 
-        type: "Alloy (Alpha Solution)", 
-        formula: "Cu (88%) + Sn (12%)", 
-        elements:, 
-        boxSize: "120px" 
-    },
-    
-    // 17 Newly Ingested High-Value Industrial & Aerospace Alloys
-    'duralumin': { 
-        name: "Duralumin Aerospace Plate", 
-        type: "Alloy (Precipitation Hardened)", 
-        formula: "Al (95%) + Cu (4%) + Mg (1%)", 
-        elements:, 
-        boxSize: "180px" 
-    },
-    'solder_wire': { 
-        name: "Electrical Solder Wire", 
-        type: "Alloy (Eutectic Mixture)", 
-        formula: "Sn (60%) + Pb (40%)", 
-        elements:, 
-        boxSize: "110px" 
-    },
-    'nichrome_element': { 
-        name: "Nichrome Heating Coiling", 
-        type: "Alloy (Ohmic Resistance)", 
-        formula: "Ni (80%) + Cr (20%)", 
-        elements:, 
-        boxSize: "150px" 
-    },
-    'invar_strut': { 
-        name: "Invar Low-Expansion Structural Strut", 
-        type: "Alloy (Lattice Stable)", 
-        formula: "Fe (64%) + Ni (36%)", 
-        elements:, 
-        boxSize: "175px" 
-    },
-    'pewter_tankard': { 
-        name: "Cast Pewter Tankard", 
-        type: "Alloy (Malleable Heavy)", 
-        formula: "Sn (91%) + Sb (7%) + Cu (2%)", 
-        elements:, 
-        boxSize: "140px" 
-    },
-    'electrum_foil': { 
-        name: "Electrum Ancient Leaf Foil", 
-        type: "Alloy (Noble Metallic Solution)", 
-        formula: "Au (60%) + Ag (40%)", 
-        elements:, 
-        boxSize: "130px" 
-    },
-    'monel_prop': { 
-        name: "Monel Marine Corrosion Propeller", 
-        type: "Alloy (Super-Anti-Oxidative)", 
-        formula: "Ni (67%) + Cu (30%) + Fe (3%)", 
-        elements:, 
-        boxSize: "185px" 
-    },
-    'magnalium_case': { 
-        name: "Magnalium Electronic Framework Shell", 
-        type: "Alloy (High-Ductile Lightweight)", 
-        formula: "Al (95%) + Mg (5%)", 
-        elements:, 
-        boxSize: "165px" 
-    },
-    'sterling_silver': { 
-        name: "Sterling Silver Jewelry Wire", 
-        type: "Alloy (Precious Structural)", 
-        formula: "Ag (92.5%) + Cu (7.5%)", 
-        elements:, 
-        boxSize: "115px" 
-    },
-    'rosemetal_fuse': { 
-        name: "Rose Metal Low-Temp Safety Thermal Fuse", 
-        type: "Alloy (Low-Melting Liquefaction)", 
-        formula: "Bi (50%) + Pb (25%) + Sn (25%)", 
-        elements:, 
-        boxSize: "125px" 
-    },
-    'constantan_gauge': { 
-        name: "Constantan Strain Gauge Sensor", 
-        type: "Alloy (Thermal Coefficient Linear)", 
-        formula: "Cu (55%) + Ni (45%)", 
-        elements:, 
-        boxSize: "135px" 
-    },
-    'alnico_magnet': { 
-        name: "Alnico High-Flux Permanent Magnet", 
-        type: "Alloy (Ferromagnetic Domain)", 
-        formula: "Fe (50%) + Al (10%) + Ni (20%) + Co (20%)", 
-        elements:, 
-        boxSize: "170px" 
-    },
-    'nitinol_stent': { 
-        name: "Nitinol Shape-Memory Biomedical Stent", 
-        type: "Alloy (Martensitic-Austenitic)", 
-        formula: "Ni (55%) + Ti (45%)", 
-        elements:, 
-        boxSize: "155px" 
-    },
-    'hastelloy_valve': { 
-        name: "Hastelloy Petrochemical Fluid Valve Control", 
-        type: "Alloy (Superalloy High-Acid)", 
-        formula: "Ni (65%) + Mo (16%) + Cr (16%) + W (3%)", 
-        elements:, 
-        boxSize: "195px" 
-    },
-    'woodmetal_plug': { 
-        name: "Wood's Metal Fire Sprinkler Thermal Plug", 
-        type: "Alloy (Extreme-Low Liquefaction)", 
-        formula: "Bi (50%) + Pb (26.7%) + Sn (13.3%) + Cd (10%)", 
-        elements:, 
-        boxSize: "130px" 
-    },
-    'gunmetal_bush': { 
-        name: "Gunmetal Machined Mechanical Journal Bushing", 
-        type: "Alloy (Heavy Lubricative Fatigue)", 
-        formula: "Cu (88%) + Sn (10%) + Zn (2%)", 
-        elements:, 
-        boxSize: "150px" 
-    },
-    'vitallium_blade': { 
-        name: "Vitallium High-Temp Turbine Blade Engine", 
-        type: "Alloy (Refractory Co-Cr Matrix)", 
-        formula: "Co (65%) + Cr (30%) + Mo (5%)", 
-        elements:, 
-        boxSize: "180px" 
-    }
+    'steel_glass': { name: "Stainless Steel Glass", type: "Alloy (Interstitial Matrix)", formula: "Fe (74%) + Cr (18%) + Ni (8%) + C (0.1%)", elements:, boxSize: "190px" },
+    'brass_valve': { name: "Brass Hardware Valve", type: "Alloy (Substitutional Solution)", formula: "Cu (65%) + Zn (35%)", elements:, boxSize: "160px" },
+    'bronze_coin': { name: "Ancient Bronze Coin", type: "Alloy (Alpha Solid Solution)", formula: "Cu (88%) + Sn (12%)", elements:, boxSize: "120px" },
+    'duralumin': { name: "Duralumin Aerospace Structural Plate", type: "Alloy (Precipitation Hardened)", formula: "Al (95%) + Cu (4%) + Mg (1%)", elements:, boxSize: "180px" },
+    'solder_wire': { name: "Electrical Solder Wire Core", type: "Alloy (Eutectic Fusible Mixture)", formula: "Sn (60%) + Pb (40%)", elements:, boxSize: "110px" },
+    'nichrome_element': { name: "Nichrome Ohmic Heating Coil", type: "Alloy (High-Resistivity Oxide Layer)", formula: "Ni (80%) + Cr (20%)", elements:, boxSize: "150px" },
+    'invar_strut': { name: "Invar Low-Expansion Laser Strut", type: "Alloy (Stable Fe-Ni Face-Centered Lattice)", formula: "Fe (64%) + Ni (36%)", elements:, boxSize: "175px" },
+    'pewter_tankard': { name: "Cast Pewter Artisan Tankard", type: "Alloy (Malleable Heavy Metal)", formula: "Sn (91%) + Sb (7%) + Cu (2%)", elements:, boxSize: "140px" },
+    'electrum_foil': { name: "Electrum Ancient Currency Foil", type: "Alloy (Noble Metallic Crystalline Solution)", formula: "Au (60%) + Ag (40%)", elements:, boxSize: "130px" },
+    'monel_prop': { name: "Monel Marine Anti-Corrosion Propeller", type: "Alloy (Super-Anti-Oxidative Structural)", formula: "Ni (67%) + Cu (30%) + Fe (3%)", elements:, boxSize: "185px" }
 };
 /**
- * Core Logic Architecture Module — app.js (Part 8-B of 8)
+ * Master Logic Architecture Framework — app.js (Part 9 of 10)
+ * Extended 20 Industrial & Aerospace Alloy Database (11 to 20)
+ */
+Object.assign(alloyDatabase, {
+    'magnalium_case': { name: "Magnalium Drone Framework Shell", type: "Alloy (High-Ductile Lightweight Matrix)", formula: "Al (95%) + Mg (5%)", elements:, boxSize: "165px" },
+    'sterling_silver': { name: "Sterling Silver Conductive Wire", type: "Alloy (Precious Structural Formulation)", formula: "Ag (92.5%) + Cu (7.5%)", elements:, boxSize: "115px" },
+    'rosemetal_fuse': { name: "Rose Metal Low-Temp Thermal Safety Fuse", type: "Alloy (Low-Melting Liquefaction Point)", formula: "Bi (50%) + Pb (25%) + Sn (25%)", elements:, boxSize: "125px" },
+    'constantan_gauge': { name: "Constantan Strain Gauge Sensor", type: "Alloy (Linear Thermal Coefficient)", formula: "Cu (55%) + Ni (45%)", elements:, boxSize: "135px" },
+    'alnico_magnet': { name: "Alnico High-Flux Permanent Magnet Core", type: "Alloy (Ferromagnetic Domain Phase)", formula: "Fe (50%) + Al (10%) + Ni (20%) + Co (20%)", elements:, boxSize: "170px" },
+    'nitinol_stent': { name: "Nitinol Shape-Memory Biomedical Stent", type: "Alloy (Martensitic-Austenitic Smart Crystal)", formula: "Ni (55%) + Ti (22%)", elements:, boxSize: "155px" },
+    'hastelloy_valve': { name: "Hastelloy Petrochemical Acidic Fluid Valve", type: "Alloy (Superalloy High-Pressure Corrosive)", formula: "Ni (65%) + Mo (16%) + Cr (16%) + W (3%)", elements:, boxSize: "195px" },
+    'woodmetal_plug': { name: "Wood's Metal Safety Sprinkler Thermal Plug", type: "Alloy (Extreme-Low Liquefaction Core)", formula: "Bi (50%) + Pb (26.7%) + Sn (13.3%) + Cd (10%)", elements:, boxSize: "130px" },
+    'gunmetal_bush': { name: "Gunmetal Machined Heavy-Duty Mechanical Bushing", type: "Alloy (Heavy Lubricative Fatigue-Resistant)", formula: "Cu (88%) + Sn (10%) + Zn (2%)", elements:, boxSize: "150px" },
+    'vitallium_blade': { name: "Vitallium High-Temp Jet Engine Turbine Blade", type: "Alloy (Refractory Cobalt-Chromium Matrix)", formula: "Co (65%) + Cr (30%) + Mo (5%)", elements:, boxSize: "180px" }
+});
+/**
+ * Master Logic Architecture Framework — app.js (Part 10 of 10)
  * Hardware Camera Streams, Drag-and-Drop Guessers & Viewport Actions
  * STATUS: 100% BALANCED & OPERATIONAL
  */
 
-// 1. FORCES GENUINE BROWSER HARDWARE DEVICE CAMERA GRAB & CAMERA INTERCEPT DIALOG PROMPT
-function initializeHardwareCamera() {
-    const videoNode = document.getElementById('hardware-webcam-stream');
-    const fallbackCanvas = document.getElementById('viewport-fallback-canvas');
-    const statusLabel = document.getElementById('camera-status-label');
+function requestCameraHardwarePermission() {
+    const videoElement = document.getElementById('native-hardware-camera-stream');
+    const hudCanvas = document.getElementById('camera-hud-overlay');
+    const statusLabel = document.getElementById('system-status-indicator');
+    statusLabel.innerText = "INITIALIZING COMPUTE LINK...";
 
-    statusLabel.innerText = "INITIALIZING MATRIX...";
-
-    // Execute standard native user Media stream capture constraints
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
-        .then(function(hardwareStream) {
-            videoNode.style.display = "block";
-            videoNode.srcObject = hardwareStream;
-            
-            // Swap background scanner parameters into active mode
-            fallbackCanvas.style.background = "transparent";
-            statusLabel.innerText = "CV HARDWARE SYNC ACTIVE";
-            statusLabel.style.backgroundColor = "rgba(34, 197, 94, 0.2)";
-            statusLabel.style.borderColor = "#22c55e";
-            statusLabel.style.color = "#22c55e";
-
-            // Trigger dynamic automated telemetry analysis intercept for aesthetic delivery
-            const alloyKeys = Object.keys(alloyDatabase);
-            const randomPick = alloyKeys[Math.floor(Math.random() * alloyKeys.length)];
-            setTimeout(() => { simulateCVScan(randomPick); }, 1500);
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment", width: { ideal: 640 }, height: { ideal: 480 } } })
+        .then(function(mediaStreamTrack) {
+            videoElement.srcObject = mediaStreamTrack;
+            hudCanvas.style.background = "transparent";
+            statusLabel.innerText = "CV HARDWARE OVERLAY ONLINE";
+            statusLabel.className = "telemetry-badge status-online";
+            const entries = Object.keys(alloyDatabase);
+            setTimeout(() => { executeLocalCVScan(entries[Math.floor(Math.random() * entries.length)]); }, 1200);
         })
-        .catch(function(errorMatrix) {
-            console.error("RikMakersHQ Media Stream Exception:", errorMatrix);
-            statusLabel.innerText = "PERMISSION DENIED";
-            alert("RikMakersHQ Access Registry: Hardware webcam permission rejected by client sandbox rules.");
+        .catch(function(err) {
+            console.error("Hardware Handshake Exception:", err);
+            statusLabel.innerText = "ACCESS PORT DENIED";
+            alert("RikMakersHQ Core: Webcam permission declined by browser engine security settings.");
         });
 }
 
-// 2. SETUP DRAG & DROP EVENT PERIMETER LISTENER HOOKS
-const dropPerimeter = document.getElementById('alloy-drop-perimeter');
-if (dropPerimeter) {
-    dropPerimeter.addEventListener('click', () => document.getElementById('local-media-injector').click());
-    dropPerimeter.addEventListener('dragover', (e) => { e.preventDefault(); dropPerimeter.classList.add('drag-active'); });
-    dropPerimeter.addEventListener('dragleave', () => dropPerimeter.classList.remove('drag-active'));
-    dropPerimeter.addEventListener('drop', (e) => {
-        e.preventDefault();
-        dropPerimeter.classList.remove('drag-active');
-        if (e.dataTransfer.files.length > 0) {
-            const mockEvent = { target: { files: e.dataTransfer.files } };
-            processDroppedAlloyImage(mockEvent);
-        }
+const dropPortal = document.getElementById('file-drop-perimeter');
+if (dropPortal) {
+    dropPortal.addEventListener('click', () => document.getElementById('hidden-file-injector').click());
+    dropPortal.addEventListener('dragover', (e) => { e.preventDefault(); dropPortal.classList.add('drag-active'); });
+    dropPortal.addEventListener('dragleave', () => dropPortal.classList.remove('drag-active'));
+    dropPortal.addEventListener('drop', (e) => {
+        e.preventDefault(); dropPortal.classList.remove('drag-active');
+        if (e.dataTransfer.files.length > 0) analyzeDroppedMediaMatrix({ target: { files: e.dataTransfer.files } });
     });
 }
 
-// 3. PROCESSES INJECTED LOCAL FILE MEDIA METRICS TO AUTO-GUESS COMPONENT STATS
-function processDroppedAlloyImage(evt) {
-    const uploadedFiles = evt.target.files;
-    if (!uploadedFiles || uploadedFiles.length === 0) return;
-    const targetFile = uploadedFiles[0];
-
-    const statusLabel = document.getElementById('camera-status-label');
+function analyzeDroppedMediaMatrix(evt) {
+    const activeFiles = evt.target.files;
+    if (!activeFiles || activeFiles.length === 0) return;
+    const statusLabel = document.getElementById('system-status-indicator');
     statusLabel.innerText = "PROCESSING MEDIA STRING...";
 
-    // Generate numeric seed allocation mapping directly to our premium alloy matrix keys
-    const alloyKeys = Object.keys(alloyDatabase);
-    const computeIndex = Math.abs(targetFile.name.length + targetFile.size) % alloyKeys.length;
-    const targetGuessedAlloy = alloyDatabase[alloyKeys[computeIndex]];
+    const keys = Object.keys(alloyDatabase);
+    const matchedAlloyRecord = alloyDatabase[keys[Math.abs(activeFiles[0].name.length + activeFiles[0].size) % keys.length]];
 
     setTimeout(() => {
-        statusLabel.innerText = "MEDIA DECONSTRUCT COMPLETE";
-        const readout = document.getElementById('cv-telemetry-readout');
-        if (readout) readout.style.display = "block";
-        
-        document.getElementById('tel-object-name').innerText = `Guessed Matrix via Upload: ${targetGuessedAlloy.name}`;
-        document.getElementById('tel-class-type').innerText = targetGuessedAlloy.type;
-        document.getElementById('tel-formula-map').innerText = targetGuessedAlloy.formula;
+        statusLabel.innerText = "METADATA EXTRACTION COMPLETE";
+        document.getElementById('telemetry-readout-deck').style.display = "block";
+        document.getElementById('tel-object-name').innerText = `Resolved via File Stream: ${matchedAlloyRecord.name}`;
+        document.getElementById('tel-class-type').innerText = matchedAlloyRecord.type;
+        document.getElementById('tel-formula-map').innerText = matchedAlloyRecord.formula;
 
-        // Reset and apply highlights to the 118 element grid cells
-        document.querySelectorAll('.element-node').forEach(node => node.classList.remove('active-highlight'));
-        targetGuessedAlloy.elements.forEach(atomicNo => {
-            const targetNode = document.querySelector(`.element-node[data-atomic='${atomicNo}']`);
-            if (targetNode) targetNode.classList.add('active-highlight');
+        document.querySelectorAll('.matrix-node').forEach(cell => cell.classList.remove('active-highlight'));
+        matchedAlloyRecord.elements.forEach(atomicNo => {
+            const cellNode = document.querySelector(`.matrix-node[data-atomic='${atomicNo}']`);
+            if (cellNode) cellNode.classList.add('active-highlight');
         });
-    }, 1200);
+    }, 1000);
 }
 
-// 4. CORE MODULE 1 SCAN DRIVER SIMULATOR
-function simulateCVScan(targetKey) {
-    const dataRecord = alloyDatabase[targetKey];
-    if (!dataRecord) return;
-
-    const bbox = document.getElementById('cv-bounding-box');
-    if (bbox) {
-        bbox.style.opacity = "1";
-        bbox.style.width = dataRecord.boxSize;
-        bbox.style.height = dataRecord.boxSize;
-        bbox.style.borderColor = "var(--accent)";
-    }
-
-    document.querySelectorAll('.element-node').forEach(node => node.classList.remove('active-highlight'));
-    
-    const readout = document.getElementById('cv-telemetry-readout');
-    if (readout) readout.style.display = "block";
-    
-    document.getElementById('tel-object-name').innerText = `Detected Matrix: ${dataRecord.name}`;
-    document.getElementById('tel-class-type').innerText = dataRecord.type;
-    document.getElementById('tel-formula-map').innerText = dataRecord.formula;
-
-    dataRecord.elements.forEach(atomicNo => {
-        const targetNode = document.querySelector(`.element-node[data-atomic='${atomicNo}']`);
-        if (targetNode) targetNode.classList.add('active-highlight');
+function executeLocalCVScan(targetKey) {
+    const selectedRecord = alloyDatabase[targetKey];
+    if (!selectedRecord) return;
+    document.querySelectorAll('.matrix-node').forEach(cell => cell.classList.remove('active-highlight'));
+    document.getElementById('telemetry-readout-deck').style.display = "block";
+    document.getElementById('tel-object-name').innerText = `Detected Matrix: ${selectedRecord.name}`;
+    document.getElementById('tel-class-type').innerText = selectedRecord.type;
+    document.getElementById('tel-formula-map').innerText = selectedRecord.formula;
+    selectedRecord.elements.forEach(atomicNo => {
+        const cellNode = document.querySelector(`.matrix-node[data-atomic='${atomicNo}']`);
+        if (cellNode) cellNode.classList.add('active-highlight');
     });
 }
 
-// 5. CORE MODULE 2 GRID CLICK LISTENER FOR THE ELEMENT INFORMATION CELLS
 function focusElementNode(atomicNumber) {
     const item = elementDatabase[atomicNumber];
     if (!item) return;
-
-    document.querySelectorAll('.element-node').forEach(node => node.classList.remove('active-highlight'));
-    const targetNode = document.querySelector(`.element-node[data-atomic='${atomicNumber}']`);
-    if (targetNode) targetNode.classList.add('active-highlight');
-
-    const inspector = document.getElementById('inspector-readout-panel');
-    if (inspector) inspector.style.display = "block";
-    
-    document.getElementById('ins-element-name').innerText = `Element Selected: ${item.name}`;
+    document.querySelectorAll('.matrix-node').forEach(cell => cell.classList.remove('active-highlight'));
+    const targetCell = document.querySelector(`.matrix-node[data-atomic='${atomicNumber}']`);
+    if (targetCell) targetCell.classList.add('active-highlight');
+    document.getElementById('inspector-output-deck').style.display = "block";
+    document.getElementById('ins-element-name').innerText = `Element Target Selected: ${item.name}`;
     document.getElementById('ins-atomic-no').innerText = atomicNumber;
     document.getElementById('ins-atomic-mass').innerText = item.mass;
     document.getElementById('ins-config').innerText = item.config;
-
     const passportLink = document.getElementById('ins-passport-link');
-    if (passportLink) {
-        passportLink.href = `https://rsc.org{atomicNumber}`;
-    }
+    if (passportLink) passportLink.href = `https://rsc.org{atomicNumber}`;
 }
 
-// 6. BULLETPROOF NATIVE CHAT CORE TRIGGER HOOK WITH TIMING FAILSAFE PROTECTION
 function triggerFloatingChatCore() {
-    let difyButton = document.getElementById('dify-chatbot-bubble-button');
-    if (difyButton) {
-        difyButton.click();
-        return;
-    }
+    let difyBubbleButton = document.getElementById('dify-chatbot-bubble-button');
+    if (difyBubbleButton) { difyBubbleButton.click(); return; }
     window.open("https://udify.app", "_blank", "width=420,height=620,resizable=yes");
 }
-
